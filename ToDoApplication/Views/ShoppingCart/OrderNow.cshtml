@@ -1,0 +1,32 @@
+﻿@using ToDoApplication.ViewModels;
+@{
+    ViewBag.Title = "OrderNow";
+}
+
+<h2>OrderNow</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            Title
+        </th>
+        <th>
+            Quantity
+        </th>
+    </tr>
+
+    @foreach (var cart in (List<Cart>)Session["Cart"])
+    {
+        <tr>
+            <td>
+                @cart.ToDo.Title
+            </td>
+            <td>
+                @cart.Quantity
+            </td>
+            
+        </tr>
+    }
+
+</table>
+
